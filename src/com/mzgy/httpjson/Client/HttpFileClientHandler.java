@@ -1,12 +1,9 @@
-package com.mzgy.Http.Client;
+package com.mzgy.httpjson.Client;
 
 import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.codec.http.*;
-
-import java.net.URI;
 
 /**
  * Created by mypc on 2017/9/2.

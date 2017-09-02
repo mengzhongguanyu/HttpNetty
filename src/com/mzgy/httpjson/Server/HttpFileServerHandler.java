@@ -1,4 +1,4 @@
-package com.mzgy.Http.Server;
+package com.mzgy.httpjson.Server;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -6,7 +6,6 @@ import io.netty.channel.*;
 import io.netty.handler.codec.http.*;
 import io.netty.util.CharsetUtil;
 
-import static com.sun.deploy.net.HttpRequest.CONTENT_LENGTH;
 import static com.sun.deploy.net.HttpRequest.CONTENT_TYPE;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 

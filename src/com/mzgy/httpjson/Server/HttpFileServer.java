@@ -1,4 +1,4 @@
-package com.mzgy.Http.Server;
+package com.mzgy.httpjson.Server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -31,9 +31,10 @@ public class HttpFileServer {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
                             socketChannel.pipeline().addLast("http-decoder", new HttpRequestDecoder());
-//                            socketChannel.pipeline().addLast("http-aggregator", new HttpObjectAggregator(65536));
+//                            socketChannel.pipeline().addLast("json-decoder", new Httpjson)
+                            socketChannel.pipeline().addLast("http-aggregator", new HttpObjectAggregator(65536));
                             socketChannel.pipeline().addLast("http-encoder", new HttpResponseEncoder());
-//                            socketChannel.pipeline().addLast("http-chunked", new ChunkedWriteHandler());
+                            socketChannel.pipeline().addLast("http-chunked", new ChunkedWriteHandler());
                             socketChannel.pipeline().addLast("fileServerHandler", new HttpFileServerHandler());
                         }
                     }).option(ChannelOption.SO_BACKLOG, 128).childOption(ChannelOption.SO_KEEPALIVE, true);
